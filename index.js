@@ -1,14 +1,17 @@
 const launch = require('./puppeteer')
 const carenginehub = require('./config/carenginehub')
+const hawishub = require('./config/hawishub')
 const os = require('os')
 console.log('cpus number', os.cpus().length);
 
-const fire = async () => {
-  const datas = carenginehub.data
+const fire = async ({datas, selector}) => {
   for (let i = 0; i < datas.length; i++) {
     console.log('start url', datas[i])
-    await launch({ url: datas[i], selector: carenginehub.selector })
+    await launch({ url: datas[i], selector })
   }
 }
 
-fire()
+const go = async () => {
+  await fire(carenginehub)
+  await fire(hawishub)
+}
