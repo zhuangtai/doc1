@@ -1,12 +1,12 @@
-const puppeteer = require('puppeteer-extra')
+const puppeteer = require('puppeteer')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 puppeteer.use(StealthPlugin())
+
 const options = {
   headless: false,
   ignoreHTTPSErrors: 'true',
   timeout: 6000,
   args: [
-    // `--proxy-server=${proxyIP:proxyPORT}`,
     `--ignore-certificate-errors`,
   ]
 };
@@ -23,6 +23,7 @@ const launch = async ({ url, selector }) => {
     await page.goto(url, { timeout: 0 })
     console.log('load page down')
     if (selector) {
+      console.log('has selector')
       await page.click(selector, {
         delay: 500
       })
@@ -30,9 +31,9 @@ const launch = async ({ url, selector }) => {
   } catch(error) {
     console.error(error);
   }
-  await page.waitForTimeout(100000)
+  await page.waitForTimeout(5000)
   await browser.close()
   console.log(url, 'done~')
 }
 
-launch({url: 'https://lusongsong.com/info/post/14216.html', selector: '#endad'})
+module.exports = launch;
