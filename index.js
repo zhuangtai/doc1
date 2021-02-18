@@ -15,3 +15,5 @@ const go = async () => {
   await fire(carenginehub)
   await fire(hawishub)
 }
+
+go()
