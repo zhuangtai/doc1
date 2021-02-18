@@ -32,7 +32,7 @@ const launch = async ({ url, selector }) => {
   } catch(error) {
     console.error(error);
   }
-  await page.waitForTimeout(5000)
+  await page.waitForTimeout(6000)
   await browser.close()
   console.log(url, 'done~')
 }
