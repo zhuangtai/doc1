@@ -1,6 +1,4 @@
 const puppeteer = require('puppeteer')
-// const StealthPlugin = require('puppeteer-extra-plugin-stealth')
-// puppeteer.use(StealthPlugin())
 
 
 const options = {
