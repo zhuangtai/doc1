@@ -1,6 +1,6 @@
 
 module.exports = {
-    data: [
+    datas: [
         "http://hawishub.com/page/2",
         "http://hawishub.com/page/3",
         "http://hawishub.com/page/4",
