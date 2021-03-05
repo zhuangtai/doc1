@@ -1,7 +1,10 @@
 image: Ubuntu
 
+environment:
+  nodejs_version: 12.19.0
+
 install:
-- ps: Install-Product node 12
+- sh: nvm install $nodejs_version
 - npm install
 
 test_script:
