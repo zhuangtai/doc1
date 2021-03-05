@@ -1,9 +1,7 @@
 image: Ubuntu
-environment:
-  nodejs_version: "12"
 
 install:
-- ps: Install-Product node $env:nodejs_version
+- ps: Install-Product node 12
 - npm install
 
 test_script:
