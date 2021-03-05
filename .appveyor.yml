@@ -1,4 +1,4 @@
-image: Ubuntu 18.04.4 LTS 
+image: Ubuntu1604 
 
 environment:
   nodejs_version: 12.19.0
