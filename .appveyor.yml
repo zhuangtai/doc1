@@ -1,4 +1,6 @@
 image: Ubuntu
+environment:
+  nodejs_version: "12"
 
 install:
 - npm install
