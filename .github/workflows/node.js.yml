@@ -55,6 +55,5 @@ jobs:
           echo "update" >> log1.log
       - name: push
         run: |
-          git add .
-          git commit -m 1
-          git push origin master
+          ls -all
+          pwd
