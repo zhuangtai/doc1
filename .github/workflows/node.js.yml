@@ -1,12 +1,12 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
   schedule:
-        - cron: '*/20 * * * * ' # 每40分钟运行一次
+        - cron: '*/30 * * * * ' # 每40分钟运行一次
         #- cron: '0 21 * * *' # 每天运行一次
 
 jobs:
@@ -37,3 +37,24 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: node index
+  build_on_linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v1
+      - name: git add
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_PRI }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "houbinbin112@outlook.com"
+          git config --global user.name "zhuangtai"
+          echo "update" >> log1.log
+      - name: push
+        run: |
+          git add .
+          git commit -m 1
+          git push origin master
