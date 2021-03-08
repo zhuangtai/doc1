@@ -55,6 +55,7 @@ jobs:
       - name: push
         run: |
           echo "update" >> log1.log
+          git checkout master
           git add .
           git commit -m '1'
           git push origin master
