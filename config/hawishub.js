@@ -25,6 +25,8 @@ module.exports = {
         "http://hawishub.top/page/2",
         "http://hawishub.top/page/3",
         "http://hawishub.top/page/1",
+        "http://blaleela.com/5z10",
+        "https://gplinks.co/8B6KBqxi",
     ],
     selector: '.post-title'
 }
