@@ -37,25 +37,25 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: node index
-  build_on_linux:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v1
-      - name: git add
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_PRI }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "houbinbin112@outlook.com"
-          git config --global user.name "zhuangtai"
-      - name: push
-        run: |
-          echo "update" >> log1.log
-          git checkout master
-          git add .
-          git commit -m '1'
-          git push origin master
+  # build_on_linux:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout source
+  #       uses: actions/checkout@v1
+  #     - name: git add
+  #       env:
+  #         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_PRI }}
+  #       run: |
+  #         mkdir -p ~/.ssh/
+  #         echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+  #         chmod 600 ~/.ssh/id_rsa
+  #         ssh-keyscan github.com >> ~/.ssh/known_hosts
+  #         git config --global user.email "houbinbin112@outlook.com"
+  #         git config --global user.name "zhuangtai"
+  #     - name: push
+  #       run: |
+  #         echo "update" >> log1.log
+  #         git checkout master
+  #         git add .
+  #         git commit -m '1'
+  #         git push origin master
