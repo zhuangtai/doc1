@@ -21,6 +21,10 @@ module.exports = {
         "http://tshciewe.com/page/2",
         "http://tshciewe.com/page/3",
         "http://tshciewe.com/page/1",
+        "http://hawishub.top/page/2",
+        "http://hawishub.top/page/2",
+        "http://hawishub.top/page/3",
+        "http://hawishub.top/page/1",
     ],
     selector: '.post-title'
 }
