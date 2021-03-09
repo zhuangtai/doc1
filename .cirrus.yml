@@ -4,7 +4,7 @@ env_task:
   script: brew install node 
   node_modules_cache:
     folder: node_modules
-    reupload_on_changes: false # since there is a fingerprint script
+    reupload_on_changes: true # since there is a fingerprint script
     fingerprint_script:
       - echo $CIRRUS_OS
       - node --version
