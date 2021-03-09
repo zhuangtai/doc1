@@ -4,13 +4,13 @@ on:
   push:
     branches: [ master ]
   schedule:
-        - cron: '*/50 * * * * ' # 每40分钟运行一次
+        - cron: '*/40 * * * * ' # 每40分钟运行一次
 jobs:
   build_on_mac:
     runs-on: macos-10.15  # ubuntu-16.04 macos-10.15 windows-2019
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [10.x, 12.x, 14.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -24,7 +24,7 @@ jobs:
     runs-on: windows-2019  # ubuntu-16.04 macos-10.15 windows-2019
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [10.x, 12.x, 14.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
