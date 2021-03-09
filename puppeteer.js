@@ -22,7 +22,7 @@ const launch = async ({ url, selector }) => {
     await page.deleteCookies({ name: cookies[i] });
   }
   try {
-    await page.goto(url, { timeout: 0 })
+    await page.goto(url, { timeout: 0, waitUntil : 'networkidle2' }).catch(e => void 0);
     console.log('load page down')
     if (selector) {
       console.log('has selector')
