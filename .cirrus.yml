@@ -6,8 +6,7 @@ env_task:
     folder: node_modules
     reupload_on_changes: true # since there is a fingerprint script
     fingerprint_script:
-      - echo $CIRRUS_OS
-      - node --version
+      - npm install
     populate_script: 
       - npm install
   test_script: node index
