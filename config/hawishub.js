@@ -15,16 +15,6 @@ module.exports = {
         "http://hawishub.top/page/2",
         "http://hawishub.top/page/3",
         "http://hawishub.top/page/1",
-        // https://adf.ly/publisher
-        "http://blaleela.com/5z10",
-        "http://blaleela.com/5z10",
-        "http://blaleela.com/5z10",
-        // https://gplinks.in/member/links
-
-        "https://gplinks.co/8B6KBqxi",
-        "https://gplinks.co/8B6KBqxi",
-        // https://shorte.st/statistics?user-type=new
-        "gestyy.com/et9F0d",
     ],
     selector: '.post-title'
 }

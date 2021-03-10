@@ -2,6 +2,7 @@ const launch = require('./puppeteer')
 const hawishub = require('./config/hawishub')
 const glamourshub = require('./config/glamourshub')
 const forginghub = require('./config/forginghub')
+const carenginehub = require('./config/carenginehub')
 const os = require('os')
 console.log('cpus number', os.cpus().length);
 
@@ -14,6 +15,7 @@ const fire = async ({datas, selector}) => {
 
 const go = async () => {
   await fire(hawishub)
+  await fire(carenginehub)
   await fire(glamourshub)
   await fire(forginghub)
 }
