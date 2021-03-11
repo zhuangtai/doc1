@@ -4,6 +4,7 @@ const glamourshub = require('./config/glamourshub')
 const forginghub = require('./config/forginghub')
 const brittarub = require('./config/brittarub')
 const carenginehub = require('./config/carenginehub')
+const test = require('./config/test')
 const os = require('os')
 
 
@@ -22,6 +23,7 @@ const go = async () => {
   await fire(glamourshub)
   await fire(forginghub)
   await fire(carenginehub)
+  await fire(test)
 }
 
 go()
