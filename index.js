@@ -17,8 +17,8 @@ const fire = async ({datas, selector, callback}) => {
 }
 
 const go = async () => {
-  await fire(hawishub)
-  await fire(brittarub)
+  // await fire(hawishub)
+  // await fire(brittarub)
   await fire(glamourshub)
   await fire(forginghub)
   await fire(carenginehub)
