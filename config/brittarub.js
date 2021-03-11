@@ -11,10 +11,6 @@ module.exports = {
         "http://brittarub.com/page/9",
         "http://brittarub.com/page/10",
         "http://brittarub.com/page/11",
-        "http://brittarub.top/page/2",
-        "http://brittarub.top/page/2",
-        "http://brittarub.top/page/3",
-        "http://brittarub.top/page/1",
     ],
     selector: '.post-title'
 }

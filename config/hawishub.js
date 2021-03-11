@@ -14,7 +14,6 @@ module.exports = {
         "http://hawishub.top/page/2",
         "http://hawishub.top/page/2",
         "http://hawishub.top/page/3",
-        "http://hawishub.top/page/1",
     ],
     selector: '.post-title'
 }
