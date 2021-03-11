@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-
+const sleep = require('./sleep');
 const options = {
   headless: false,
   ignoreHTTPSErrors: 'true',
@@ -33,7 +33,7 @@ const launch = async ({ url, selector }) => {
   } catch(error) {
     console.error(error);
   }
-  await page.waitForTimeout(6000)
+  await sleep(5000)
   await browser.close()
   console.log(url, 'done~')
 }
