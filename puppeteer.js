@@ -12,7 +12,7 @@ const options = {
     `--ignore-certificate-errors`,
   ]
 };
-const launch = async ({ url, selector }) => {
+const launch = async ({ url, selector, callback }) => {
   console.log('start launch puppeteer ...', url)
   const browser = await puppeteer.launch(options)
   const page = await browser.newPage()
@@ -32,6 +32,10 @@ const launch = async ({ url, selector }) => {
     }
   } catch(error) {
     console.error(error);
+  }
+  if (callback) {
+    console.log('has callback');
+    await callback(page);
   }
   await sleep(5000)
   await browser.close()
