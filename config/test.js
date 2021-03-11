@@ -19,7 +19,6 @@ const callback = async (page, time = 0) => {
 
 module.exports = {
   datas: [
-    "http://carenginehub.com/page/2/",
     "http://hawishub.com/page/2/",
   ],
   selector: '',

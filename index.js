@@ -2,7 +2,7 @@ const launch = require('./puppeteer')
 const hawishub = require('./config/hawishub')
 const glamourshub = require('./config/glamourshub')
 const forginghub = require('./config/forginghub')
-const brittarub = require('./config/brittarub')
+// const t = require('./config/brittarub')
 const carenginehub = require('./config/carenginehub')
 const test = require('./config/test')
 const os = require('os')
@@ -19,7 +19,7 @@ const fire = async ({datas, selector, callback}) => {
 
 const go = async () => {
   await fire(hawishub)
-  // await fire(brittarub)
+  await fire(test)
   await fire(glamourshub)
   await fire(forginghub)
   await fire(carenginehub)
